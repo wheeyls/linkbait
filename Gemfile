@@ -11,3 +11,5 @@ gem 'sass', '~> 3.1.12'
 
 # Sass libraries
 #gem 'grid-coordinates', '~> 1.1.4'
+
+gem 'mongoid'

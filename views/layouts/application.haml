@@ -1,16 +1,17 @@
-!!!
+!!!5
 %html{html_attrs}
   %head
     %meta{:'http-equiv' => "Content-Type", :content => "text/html; charset=utf-8"}
+    %link{:rel => "stylesheet", :href => "/stylesheets/bootstrap.css"}
+    %link{:rel => "stylesheet", :href => "/stylesheets/style.css"}
+    %script{:src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
     %meta{:name => "lang", :content => "en"}
-    %title Sinatra Bootstrap
-    %link{:href=>'/stylesheets/application.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
-    %link{:href=>'/stylesheets/style.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
+    %title Election Year Linkbait
     %script{:type => "text/javascript", :src => "http://code.jquery.com/jquery-1.7.1.min.js"}
-    %script{:type => "text/javascript", :src => "/javascripts/lib/modernizr-1.6.min.js"}
-    %script{:type => "text/javascript", :src => "/javascripts/application.js"}
     
   %body
-    = partial :_nav_main
     = yield
     = partial :_analytics
+    %script{:type => 'text/javascript', :src => "https://www.google.com/jsapi"}
+    %script{:type => 'text/javascript', :src => '/javascripts/bootstrap-buttons.js'}
+    %script{:src=>"/javascripts/script.js"}

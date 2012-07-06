@@ -1,0 +1,10 @@
+development:
+  host: localhost
+  database: linkbait_dev
+
+production:
+  host: prod_host
+  port: 1000
+  username: main
+  password: blabla
+  database: linkbait_prod

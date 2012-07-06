@@ -1,1 +1,76 @@
-%h1 Sinatra has taken the stage
+.container
+  %header.page-header
+    .jumbotron
+      %h1 LinkBait
+    .leader
+      %em
+  .row
+    .content.span10
+      .slide
+        .page-header
+          %h2= @linkbait_title || "Hypothesis: People are more likely to click on a highly polarizing negative link, than on a positive one."
+      .slide
+        .page-header
+          .hero-unit 
+            %h2 Nah, Just Kidding
+        %p The title of this article was pure linkbait. It is not real.
+        %p
+          But while I've got you here,
+          %b fill in the blank:
+        .w2 When I saw the title of this article I experienced a
+        .w3 Positive
+        .w3 Negative
+        .w3 Neutral
+        emotion.
+
+        %p It was a simple deception, whose the simple goal of getting you to click on the link.
+      .slide
+        .page-header
+          %h3 Or Maybe Not?
+        %p When I look at political discourse, I see significant polarization.
+        %p There are a whole lot of stupid, despicable "Thems." 
+        %p There are also a good number of trodden upon, persecuted and threatened "Us's."
+        %p Why is this happening? Let's create some numbers!
+        %p 
+      .slide
+        .page-header
+          %h3 An Experiment
+        %p
+          My hypothesis is:
+          %b Polarized and imflamatory article titles will generate more revenue for a website than balanced and rational article titles.
+        %p You're invited to join in the experiment. It's simple:
+        %p Look at the title 
+        %li Share the results, in terms of click-through, and revenue, of your different article titles.
+      .slide
+        .page-header
+          %h3 An Experiment
+        %p You probably realize that media outlets are incented to make us feel this way. It's all about advertising - headlines and stories that are more inflammatory are going to generate more traffic.
+        %p To explore how this works on the web, I've worked out a little experiment with this page. I will share this page with a number of different headlines over time, measuring the response per headline.
+        %p The data will be presented as a friendly reminder to view all those inflammatory articles this election season with a grain of salt.
+        / %h3 Share Link Bait your Friends
+        / %p You probably realize that media outlets are incented to make us feel this way. It's all about advertising - headlines and stories that are more inflammatory are going to generate more traffic.
+        / %p To explore how this works on the web, I've worked out a little experiment with this page - you get to create your own link bait!
+        / %p Just fill out the form below with your trolling title. Share it on your Facebook, and see who takes the bait.
+        / %p I will be recording the results of all the different headlines, and their relative draw. The data will be presented as a friendly reminder to view all those inflammatory articles this election season with a grain of salt.
+        / .page-header
+        / %form#bait-creator
+        / %input#bait-title.field
+        / %input{:type => :submit, :value => 'Make Custom Link Bait!'}
+        / %p Share this link of Facebook:
+        / .well#bait-result
+    .sidebar.span2
+      .well
+        some ad
+      .well
+        some ad
+  %form.survey-form{:method => 'post', :action => '/vote'}
+    %input{:type=> 'hidden', :name => 'surveyid', :value => "#{Time.now.to_i}"}
+    %input.opt#neg{:type=> 'hidden', :name => 'is_negative', :value => false}
+    %input.opt#neu{:type=> 'hidden', :name => 'is_neutral', :value => false}
+    %input.opt#pos{:type=> 'hidden', :name => 'is_positive', :value => false}
+    .btn-group.voting{'data-toggle' => 'buttons-radio'}
+      .btn{'data-vote' => 'neg'} Negative
+      .btn{'data-vote' => 'neu'} Neutral
+      .btn{'data-vote' => 'pos'} Positive
+
+  #chart-div
